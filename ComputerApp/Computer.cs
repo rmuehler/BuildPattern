@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace ComputerApp
 {
     public class Computer
     {
-        public List<object> components = new List<object>() { };
+        public List<object> components = new();
 
         public void Add(string component)
         {
@@ -15,11 +14,8 @@ namespace ComputerApp
 
         public string ListComponents()
         {
-            StringBuilder builder = new StringBuilder();
-            foreach (string component in components)
-            {
-                builder.Append(component + ", ");
-            }
+            var builder = new StringBuilder();
+            foreach (string component in components) builder.Append(component + ", ");
 
             return builder.ToString(0, builder.Length - 2);
         }

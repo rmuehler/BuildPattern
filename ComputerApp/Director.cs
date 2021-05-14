@@ -44,7 +44,5 @@
             _builder.BuildRAM(RAM);
             return _builder.GetComputer();
         }
-        
-        
     }
 }

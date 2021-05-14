@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace ComputerApp
+﻿namespace ComputerApp
 {
     public class Builder : IComputer
     {
-        private Computer _computer = new Computer();
+        private Computer _computer = new();
 
         public Builder()
         {
             Reset();
         }
-        
+
         public void BuildOS(string OS)
         {
             _computer.Add(OS);
@@ -23,7 +21,7 @@ namespace ComputerApp
 
         public void BuildCPU(string CPU)
         {
-           _computer.Add(CPU);
+            _computer.Add(CPU);
         }
 
         public void BuildRAM(string RAM)

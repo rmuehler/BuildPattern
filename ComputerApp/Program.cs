@@ -1,11 +1,10 @@
 ﻿using System;
-using System.ComponentModel.Design;
 
 namespace ComputerApp
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var builder = new Builder();
             var director = new Director(builder);
