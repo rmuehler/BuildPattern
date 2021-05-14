@@ -2,11 +2,11 @@
 {
     public interface IComputer
     {
-        void BuildOS();
-        void BuildGraphicCard();
-        void BuildCPU();
-        void BuildRAM();
-        void BuildStorage();
+        void BuildOS(string OS);
+        void BuildGraphicCard(string GraphicCard);
+        void BuildCPU(string CPU);
+        void BuildRAM(string RAM);
+        void BuildStorage(string Storage);
         Computer GetComputer();
     }
 }

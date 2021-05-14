@@ -1,43 +1,27 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ComputerApp
 {
-    public class Computer 
+    public class Computer
     {
-        private string _OS;
-        private string _GraphicCard;
-        private string _CPU;
-        private string _RAM;
-        private string _Storage;
+        public List<object> components = new List<object>() { };
 
-        public void OS(string OS)
+        public void Add(string component)
         {
-            _OS = OS;
+            components.Add(component);
         }
 
-        public void GraphicCard(string GraphicCard)
+        public string ListComponents()
         {
-            _GraphicCard = GraphicCard;
-        }
+            StringBuilder builder = new StringBuilder();
+            foreach (string component in components)
+            {
+                builder.Append(component + ", ");
+            }
 
-        public void CPU(string CPU)
-        {
-            _CPU = CPU;
-        }
-
-        public void RAM(string RAM)
-        {
-            _RAM = RAM;
-        }
-
-        public void Storage(string Storage)
-        {
-            _Storage = Storage;
-        }
-
-        public override string ToString()
-        {
-            return $"Os: {_OS}, GraphicCard: {_GraphicCard}, Cpu: {_CPU}, Ram: {_RAM}, Storage: {_Storage}";
+            return builder.ToString(0, builder.Length - 2);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace ComputerApp
 {
@@ -6,22 +7,23 @@ namespace ComputerApp
     {
         static void Main(string[] args)
         {
+            var builder = new Builder();
+            var director = new Director(builder);
             Console.WriteLine("---Development PC Configurations---");
-            var devpc = new Development();
-            var director = new Director(devpc);
-            Console.WriteLine(director.BuildComp().ToString());
+
+            Console.WriteLine(director.BuildGamingComputer().ListComponents());
 
             Console.WriteLine("---Gaming PC Configurations ---");
-            var gamingpc = new Gaming();
-            director = new Director(gamingpc);
-            Console.WriteLine(director.BuildComp().ToString());
+            builder.Reset();
+            director.Builder = builder;
+            Console.WriteLine(director.BuildDevComputer().ListComponents());
 
 
             Console.WriteLine("---Custom PC Configurations ---");
-
-
-       }
+            builder.Reset();
+            director.Builder = builder;
+            Console.WriteLine(director.BuildCustomComputer("Windows",
+                "HDD", "AMD", "Intel", "128").ListComponents());
+        }
     }
 }
-
-
