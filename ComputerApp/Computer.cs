@@ -2,7 +2,7 @@
 
 namespace ComputerApp
 {
-    public class Computer
+    public class Computer 
     {
         private string _OS;
         private string _GraphicCard;

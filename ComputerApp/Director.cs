@@ -9,7 +9,7 @@
             _builder = computer;
         }
 
-        public Computer BuildGamingPc()
+        public Computer BuildComp()
         {
             _builder.BuildOS();
             _builder.BuildStorage();
@@ -18,5 +18,15 @@
             _builder.BuildRAM();
             return _builder.GetComputer();
         }
+
+        // public Computer BuildDevPC()
+        // {
+        //     _builder.BuildOS();
+        //     _builder.BuildStorage();
+        //     _builder.BuildGraphicCard();
+        //     _builder.BuildCPU();
+        //     _builder.BuildRAM();
+        //     return _builder.GetComputer();
+        // }
     }
 }

@@ -6,7 +6,22 @@ namespace ComputerApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-        }
+            Console.WriteLine("---Development PC Configurations---");
+            var devpc = new Development();
+            var director = new Director(devpc);
+            Console.WriteLine(director.BuildComp().ToString());
+
+            Console.WriteLine("---Gaming PC Configurations ---");
+            var gamingpc = new Gaming();
+            director = new Director(gamingpc);
+            Console.WriteLine(director.BuildComp().ToString());
+
+
+            Console.WriteLine("---Custom PC Configurations ---");
+
+
+       }
     }
 }
+
+
