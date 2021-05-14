@@ -1,33 +1,44 @@
-﻿namespace ComputerApp
+﻿using System;
+
+namespace ComputerApp
 {
     public class Gaming : IComputer
     {
+        private Computer _computer;
+
+        public Gaming()
+        {
+            _computer = new Computer();
+        }
         
-        
-        
-        public void GetOS()
+        public void BuildOS()
         {
-            throw new System.NotImplementedException();
+            _computer.OS("Windows");
         }
 
-        public void GetGraphicCard()
+        public void BuildGraphicCard()
         {
-            throw new System.NotImplementedException();
+            _computer.GraphicCard("AMD");
         }
 
-        public void GetCPU()
+        public void BuildCPU()
         {
-            throw new System.NotImplementedException();
+           _computer.CPU("AMD");
         }
 
-        public void GetRAM()
+        public void BuildRAM()
         {
-            throw new System.NotImplementedException();
+            _computer.RAM("32");
         }
 
-        public void GetStorage()
+        public void BuildStorage()
         {
-            throw new System.NotImplementedException();
+            _computer.Storage("SSD");
+        }
+
+        public Computer GetComputer()
+        {
+            return _computer;
         }
     }
 }
